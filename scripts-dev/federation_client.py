@@ -270,7 +270,7 @@ class MatrixConnectionAdapter(HTTPAdapter):
 
         (host, port) = self.lookup(parsed.netloc)
         netloc = "%s:%d" % (host, port)
-        print("Connecting to %s" % (netloc,))
+        print("Connecting to %s" % (netloc,), file=sys.stderr)
         url = urlunparse((
             "https", netloc, parsed.path, parsed.params, parsed.query,
             parsed.fragment,
